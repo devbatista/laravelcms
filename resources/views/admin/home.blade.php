@@ -9,11 +9,3 @@
 @section('content')
     ...
 @endsection
-
-@section('css')
-{{-- Colocar importações de CSS --}}
-@endsection
-
-@section('js')
-{{-- Colocar arquivos js (fica no fim da página) --}}
-@endsection

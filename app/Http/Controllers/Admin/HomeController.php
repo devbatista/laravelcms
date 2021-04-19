@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function __construct()
     {
-        // $this->middleware('auth'); // Todas as actions serão baseadas na autenticação
+        $this->middleware('auth'); // Todas as actions serão baseadas na autenticação
     }
 
     public function index()
