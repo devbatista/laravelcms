@@ -187,7 +187,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'painel',
     'logout_url' => 'painel/logout',
     'login_url' => 'painel/login',
     'register_url' => 'painel/register',
