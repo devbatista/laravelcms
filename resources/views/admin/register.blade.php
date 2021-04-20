@@ -1,3 +1,3 @@
-@extends('adminlte::register')
+@extends('adminlte::auth.register')
 
 @section('title', 'Cadastro')

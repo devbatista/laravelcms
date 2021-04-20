@@ -21,4 +21,6 @@ Route::prefix('painel')->group(function () {
 
     Route::get('register', 'Admin\Auth\RegisterController@index')->name('register');
     Route::post('register', 'Admin\Auth\RegisterController@register');
+
+    Route::post('logout', 'Admin\Auth\LoginController@logout')->name('logout');
 });
