@@ -30,8 +30,13 @@
                             <td>
                                 <a href="{{ route('users.edit', ['user' => $user->id]) }}"
                                     class="btn btn-sm btn-warning">Editar</a>
-                                <a href="{{ route('users.destroy', ['user' => $user->id]) }}"
-                                    class="btn btn-sm btn-danger">Excluir</a>
+
+                                <form class="d-inline" action="{{ route('users.destroy', ['user' => $user->id]) }}" method="POST" onsubmit="return confirm('Deseja mesmo deletar?')">
+                                    @method('DELETE')
+                                    @csrf
+
+                                    <button type="submit" class="btn btn-sm btn-danger">Excluir</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
