@@ -237,7 +237,8 @@ return [
         [
             'text'        => 'Usuários',
             'url'         => 'painel/users',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'far fa-fw fa-user',
+            'can'         => 'edit-users',
         ],
         ['header' => 'account_settings'],
         [
