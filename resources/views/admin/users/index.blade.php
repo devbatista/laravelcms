@@ -30,13 +30,14 @@
                             <td>
                                 <a href="{{ route('users.edit', ['user' => $user->id]) }}"
                                     class="btn btn-sm btn-warning">Editar</a>
-
+                                @if($loggedId != $user->id)
                                 <form class="d-inline" action="{{ route('users.destroy', ['user' => $user->id]) }}" method="POST" onsubmit="return confirm('Deseja mesmo deletar?')">
                                     @method('DELETE')
                                     @csrf
 
                                     <button type="submit" class="btn btn-sm btn-danger">Excluir</button>
                                 </form>
+                                @endif
                             </td>
                         </tr>
                     @endforeach
