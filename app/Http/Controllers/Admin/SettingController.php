@@ -38,17 +38,21 @@ class SettingController extends Controller
             return redirect()->route('settings')->withErrors($validator);
         }
 
-        // return redirect()->route('settings');
+        foreach($data as $item => $value){
+            Setting::where('name', $item)->update(['content' => $value]);
+        }
+
+        return redirect()->route('settings')->with(['warning' => 'Informações alteradas com sucesso']);
     }
 
     private function validator($data)
     {
-        return Validator::make($data,[
+        return Validator::make($data, [
             'title' => ['string', 'max:100'],
             'subtitle' => ['string', 'max:100'],
             'email' => ['string', 'email'],
-            'bgcolor' => ['string', 'regex:/#[A-Z0-9]{6}/i'],
-            'textcolor' => ['string', 'regex:/#[A-Z0-9]{6}/i'],
+            'bgcolor' => ['string', 'regex:/#[A-F0-9]{6}/i'],
+            'textcolor' => ['string', 'regex:/#[A-F0-9]{6}/i'],
         ]);
     }
 }
