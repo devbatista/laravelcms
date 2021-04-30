@@ -32,11 +32,22 @@ class HomeController extends Controller
 
         $usersCount = User::count();
 
+        $pagePie = [
+            'Teste 1' => 100,
+            'Teste 2' => 200,
+            'Teste 3' => 300,
+        ];
+
+        $pageLabels = json_encode(array_keys($pagePie));
+        $pageValues = json_encode(array_values($pagePie));
+
         return view('admin.home', [
             'visitsCount' => $visitsCount,
             'onlineCount' => $onlineCount,
             'pagesCount' => $pagesCount,
             'usersCount' => $usersCount,
+            'pageLabels' => $pageLabels,
+            'pageValues' => $pageValues,
         ]);
     }
 }
