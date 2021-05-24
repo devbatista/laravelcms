@@ -78,7 +78,7 @@
                                 </a>
                             </div>
                             <p>
-                                {{-- {{$settings["subtitle"]}} --}}
+                                {{$front_config["subtitle"]}}
                             </p>
                             <div class="socail_links">
                                 <ul>

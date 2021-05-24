@@ -8,7 +8,9 @@
 
 @section('content')
     <style>
-        .tox-notifications-container{ display: none !important; }
+        .tox-notifications-container {
+            display: none !important;
+        }
     </style>
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -23,7 +25,7 @@
 
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('pages.update', ['page'=>$page->id]) }}" method="POST" class="form-horizontal">
+            <form action="{{ route('pages.update', ['page' => $page->id]) }}" method="POST" class="form-horizontal">
                 @method('PUT')
                 @csrf
                 <div class="form-group row">
@@ -56,13 +58,14 @@
             heigth: 300,
             plugins: ['link', 'table', 'image', 'autoresize', 'lists'],
             toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | table | link image | bullist numlist',
-            content_css:[
-                '{{asset('assets/css/content.css')}}'
+            content_css: [
+                '{{ asset('assets/css/content.css') }}'
             ],
-            images_upload_url: '{{route('imageupload')}}',
+            images_upload_url: '{{ route('imageupload') }}',
             images_upload_credentials: true,
             convert_urls: false,
         });
+
     </script>
 
 @endsection
